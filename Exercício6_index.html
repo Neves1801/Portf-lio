@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+    <style>
+     body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #233f30;
+}
+
+
+h1 {
+    color: #211111;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+p {
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    margin: 5px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    display: inline-block;
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Se você fosse apostar na mega-sena, quais números você escolheria?</h1>
+        <label for="nome"> Digite a sua aposta</label>
+        <input type="text" id="name" placeholder="digite o numero">
+        <button id="but" onclick="msg()">Enviar</button>
+        <button id="buts" onclick="">limpar</button>
+        <p id="mensg"></p>
+        <p id="mensg"></p>
+        <h2>Apostas digitadas:</h2>
+        <ul id="nomes digitados"></ul>
+    </div>
+    <script>
+        var paragrafo = document.getElementById('mensg')
+        function msg() {
+            var nome = document.getElementById("name").value
+            paragrafo.innerHTML = "Bom dia!!!  " + "Obrigado pela sua opinião!"
+        }
+        document.getElementById("meuBotao").addEventListener("click", function () {
+            const nome = document.getElementById("nome").value;
+
+            // Verifica se um nome foi digitado (não está vazio)
+            if (nome) {
+                // Se um nome foi digitado, exibe uma saudação personalizada na área "minhaMensagem"
+                document.getElementById("minhaMensagem").innerHTML = "Olá, " + nome + "!";
+
+                // Obtém a lista de nomes digitados com o id "nomesDigitados" 
+                const listaNomes = document.getElementById("nomesDigitados");
+
+                // Cria um elemento de lista (li) para o nome digitado
+                const li = document.createElement("li");
+
+                // Adiciona o nome digitado como texto ao elemento li
+                li.appendChild(document.createTextNode(nome));
+
+                // Adiciona o elemento li à lista de nomes digitados
+                listaNomes.appendChild(li);
+            } else {
+                // Se nenhum nome foi digitado, exibe uma mensagem de solicitação no elemento "minhaMensagem"
+                document.getElementById("minhaMensagem").innerHTML = "Por favor, digite seu nome.";
+            }
+        });
+
+        // Adiciona um ouvinte de evento ao botão com o id "limparBotao" quando ele é clicado
+        document.getElementById("limparBotao").addEventListener("click", function () {
+            // Limpa o campo de entrada com o id "nome"
+            document.getElementById("nome").value = "";
+
+            // Limpa a mensagem exibida no elemento "minhaMensagem"
+            document.getElementById("minhaMensagem").innerHTML = "";
+
+            // Limpa a lista de nomes digitados no elemento "nomesDigitados"
+            document.getElementById("nomesDigitados").innerHTML = "";
+        });
+
+    </script>
+</body>
+
+</html>

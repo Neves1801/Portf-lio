@@ -1,0 +1,47 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #666666;
+    background-image: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+    color: #ecf0f1;
+  }
+
+  #board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+  }
+
+  .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ecf0f1;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: #99FF33;
+    color: #ecf0f1;
+  }
+
+  .cell:hover {
+    background-color: #99FF33;
+  }
+
+  .message {
+    margin-top: 1rem;
+    font-size: 1.5em;
+    color: #ecf0f1;
+  }
+
+
